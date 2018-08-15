@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<title>Settings Bill</title>
+
+<div class="container">
+    <div class="row">
+      <table class="">
+        <h2>Setting Bill Recordings</h2>
+      <tr>
+
+            <th>Type of Bill</th>
+            <th>Amount of Bill</th>
+            <th>Time of the Bill</th>
+
+      </tr>
+
+      {{#each recording}}
+        <tr>
+          <td>{{type}}</td>
+          <td>{{cost}}</td>
+          <td>{{timestamp}}</td>
+        </tr>
+      {{/each}}
+
+      </table>
+    </div>
+</div>

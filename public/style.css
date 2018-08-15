@@ -1,0 +1,26 @@
+.box {
+  padding: 0.75em;
+  border-radius : 0.5em;
+  border : 1px solid #ddd;
+  height: auto;
+  margin-bottom: 1em;
+}
+
+.warning {
+  color: orange;
+  font-weight: bold;
+}
+
+.danger {
+  color: crimson;
+  font-weight: bold;
+}
+
+.total {
+  font-weight: bold;
+<<<<<<< HEAD
+  font-size:2em;
+=======
+  font-size: 2em;
+>>>>>>> 3d458672f373d08b6a2992fdeab168c7c0a15193
+}
