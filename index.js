@@ -82,5 +82,9 @@ app.get('/actions/:type', function(req, res){
 
 });
 
+let PORT = process.env.PORT || 3018;
 
-app.listen(3018);
+app.listen(PORT, function(){
+  console.log('App starting on port', PORT);
+});
+//app.listen(3018);
