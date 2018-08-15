@@ -132,8 +132,16 @@ module.exports = function() {
       return "warning";
     }
     else {
-      return 'warning';
+      return 'not yet';
     }
+
+
+  }
+  function reload(){
+    smsCost = 0;
+    callCost = 0;
+    allTotalCallSettings = 0;
+    actionList = 0;
   }
 
   return {
@@ -152,6 +160,7 @@ module.exports = function() {
     forTotal,
     actions,
     actionsFor,
-    total
+    total,
+    reload
   }
 }

@@ -31,7 +31,7 @@ app.get('/', function(req,res){
 				warningLevel:billSettings.forWarningValue(),
 	      criticalLevel:billSettings.forCriticalValue()
 			};
-			//----Gets the returned totals from factory function-----
+//----Gets the returned totals from factory function-----
 			var totals = {
 				sms:billSettings.forSmsValues(),
 				call:billSettings.forCallValues(),
@@ -81,6 +81,18 @@ app.get('/actions/:type', function(req, res){
 	res.render('actions', {recording:billSettings.actionsFor(type)})
 
 });
+
+
+app.get('/reload', function(req, res){
+	billSettings.reload();
+	var goGet = {
+		sms:billSettings.reload(),
+		call:billSettings.reload(),
+		total:billSettings.reload(),
+
+			};
+	res.redirect('/');
+})
 
 let PORT = process.env.PORT || 3018;
 

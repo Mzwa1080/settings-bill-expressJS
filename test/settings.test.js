@@ -38,15 +38,15 @@ describe('The Settings Bill function', function(){
   });
 
 
-  it('should Warning if CALL has reached the Warning Level of 5.50', function(){
+  it('should NOT YET if CALL has not reached the Warning Level of 5.50', function(){
 
     let settingsBIll = settingsBill();
 
-    settingsBIll.callCostValue('7.50');
+    settingsBIll.callCostValue('3.50');
     settingsBIll.warningLevel("5.50");
     // console.log(settingsBIll.forWarningValue());
 
-    assert.equal('warning', settingsBIll.colorChanger());
+    assert.equal('not yet', settingsBIll.colorChanger());
   });
 
 });
