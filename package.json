@@ -22,11 +22,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Mzwa1080/settings-bill-app.git"
+    "url": "git+https://github.com/Mzwa1080/settings-bill-expressJS.git"
   },
   "bugs": {
-    "url": "https://github.com/Mzwa1080/settings-bill-app/issues"
+    "url": "https://github.com/Mzwa1080/settings-bill-expressJS/issues"
   },
-  "homepage": "https://github.com/Mzwa1080/settings-bill-app#readme",
+  "homepage": "https://github.com/Mzwa1080/settings-bill-expressJS#readme",
   "description": ""
 }
