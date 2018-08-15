@@ -1,25 +1,25 @@
 module.exports = function() {
 
-  var callCost = 0;
-  var smsCost = 0;
+  let callCost = 0;
+  let smsCost = 0;
 
-  var callsTotalThree = 0;
-  var smsTotalThree = 0;
-  var allTotalCallSettings = 0;
-  var warningLevels = 0;
-  var criticalLevels = 0;
+  let callsTotalThree = 0;
+  let smsTotalThree = 0;
+  let allTotalCallSettings = 0;
+  let warningLevels = 0;
+  let criticalLevels = 0;
 
-  var actionList = [];
-
+  let actionList = [];
+  let forTesting = 0;
   function callCostValue(updateCallValue) {
     callCost = parseFloat(updateCallValue)
-    return callCost.toFixed(2)
+    // return callCost.toFixed(2)
 
   }
 
   function smsCostValue(updateSmsValue) {
     smsCost = parseFloat(updateSmsValue)
-    return smsCost.toFixed(2)
+    // return smsCost.toFixed(2)
   }
 
   function warningLevel(updatedWarningValue) {
@@ -29,6 +29,7 @@ module.exports = function() {
 
   function criticalLevel(updateCriticalValue) {
     criticalLevels = parseFloat(updateCriticalValue)
+
   }
 
   function forSMSAndCall(billPrice) {
@@ -82,19 +83,12 @@ module.exports = function() {
       }
     }
 
-
-
-
     return filteredActions;
 
     // return actionList.filter((action) => action.type === type);
   }
 
-
-
-
   function getSmsCost() {
-
     return smsCost.toFixed(2);
   }
 
@@ -102,12 +96,16 @@ module.exports = function() {
     return callCost.toFixed(2);
   }
 
+//--------------------------------------------------------- --------------------
+//FOR WHEN THE USER ENTERED A NUMBER AND NOW RADIO BTN IS COUNTING, THATS Y THEY ARE RETURNING ZERO
   function forCallValues() {
     return callsTotalThree.toFixed(2);
+//----------------------------------------------------------------------------
   }
-
+//FOR WHEN THE USER ENTERED A NUMBER AND NOW RADIO BTN IS COUNTING, THATS Y THEY ARE RETURNING ZERO
   function forSmsValues() {
     return smsTotalThree.toFixed(2);
+//----------------------------------------------------------------------------
   }
 
   function forWarningValue() {
@@ -121,14 +119,20 @@ module.exports = function() {
     allTotalCallSettings = callsTotalThree + smsTotalThree;
     return allTotalCallSettings.toFixed(2);
   }
-
+  function total(){
+    forTesting = callCost + smsCost;
+    return forTesting;
+  }
   function colorChanger() {
     if (allTotalCallSettings >= criticalLevels && allTotalCallSettings !==0) {
       return "danger";
-    } else if (allTotalCallSettings >= warningLevels && allTotalCallSettings !==0) {
+    }
+
+    else if (allTotalCallSettings >= warningLevels && allTotalCallSettings !==0) {
       return "warning";
-    } else {
-      return "not reached any LEVEL!!!"
+    }
+    else {
+      return 'warning';
     }
   }
 
@@ -148,6 +152,6 @@ module.exports = function() {
     forTotal,
     actions,
     actionsFor,
-
+    total
   }
 }
