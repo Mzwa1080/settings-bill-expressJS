@@ -1,4 +1,3 @@
-
 let express = require('express');
 let expressHandlebars = require('express-handlebars');
 let bodyParser = require('body-parser');
@@ -83,16 +82,11 @@ app.get('/actions/:type', function(req, res){
 });
 
 
-app.get('/reload', function(req, res){
-	billSettings.reload();
-	var goGet = {
-		sms:billSettings.reload(),
-		call:billSettings.reload(),
-		total:billSettings.reload(),
-
-			};
-	res.redirect('/');
-})
+// app.get('/reload', function(req, res){
+// 	billSettings.reload();
+//
+// 	res.redirect('/');
+// })
 
 let PORT = process.env.PORT || 3018;
 

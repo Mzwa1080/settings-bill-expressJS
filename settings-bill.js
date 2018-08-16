@@ -13,13 +13,13 @@ module.exports = function() {
   let forTesting = 0;
   function callCostValue(updateCallValue) {
     callCost = parseFloat(updateCallValue)
-    // return callCost.toFixed(2)
+     return callCost.toFixed(2)
 
   }
 
   function smsCostValue(updateSmsValue) {
     smsCost = parseFloat(updateSmsValue)
-    // return smsCost.toFixed(2)
+     return smsCost.toFixed(2)
   }
 
   function warningLevel(updatedWarningValue) {
@@ -38,27 +38,27 @@ module.exports = function() {
       if (allTotalCallSettings < criticalLevels) {
         callsTotalThree += callCost;
         //console.log(callsTotalThree)
-
+        actionList.push({
+          type: billPrice,
+          cost:callCost,
+          timestamp: new Date()
+        });
       }
-      actionList.push({
-        type: billPrice,
-        cost:callCost,
-        timestamp: new Date()
-      });
+
 
     }
     if (billPrice === "sms") {
       if (allTotalCallSettings < criticalLevels) {
         smsTotalThree += smsCost;
-
+        actionList.push({
+          type: billPrice,
+          cost:smsCost,
+          timestamp: new Date()
+        });
       }
 
     }
-    actionList.push({
-      type: billPrice,
-      cost:smsCost,
-      timestamp: new Date()
-    });
+
     //console.log(callCost);
 
   }
