@@ -45,7 +45,6 @@ module.exports = function() {
         });
       }
 
-
     }
     if (billPrice === "sms") {
       if (allTotalCallSettings < criticalLevels) {
@@ -58,8 +57,6 @@ module.exports = function() {
       }
 
     }
-
-    //console.log(callCost);
 
   }
 
