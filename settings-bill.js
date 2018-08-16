@@ -137,8 +137,10 @@ module.exports = function() {
   function reload(){
     smsCost = 0;
     callCost = 0;
+    callsTotalThree = 0;
+    smsTotalThree = 0;
     allTotalCallSettings = 0;
-    actionList = 0;
+    actionList = [];
   }
 
   return {
