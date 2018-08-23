@@ -16,11 +16,12 @@
   font-weight: bold;
 }
 
-.total {
+/*.totals {
   font-weight: bold;
-<<<<<<< HEAD
   font-size:2em;
-=======
-  font-size: 2em;
->>>>>>> 3d458672f373d08b6a2992fdeab168c7c0a15193
+  color: crimson;
+
+}*/
+.errorColor{
+  color: crimson;
 }

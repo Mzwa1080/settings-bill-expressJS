@@ -44,8 +44,8 @@ module.exports = function() {
           timestamp: new Date()
         });
       }
-
     }
+    
     if (billPrice === "sms") {
       if (allTotalCallSettings < criticalLevels) {
         smsTotalThree += smsCost;
@@ -128,12 +128,19 @@ module.exports = function() {
     else if (allTotalCallSettings >= warningLevels && allTotalCallSettings !==0) {
       return "warning";
     }
-    else {
-      return 'not yet';
-    }
-
-
   }
+
+  function errorDisplay(){
+    if(allTotalCallSettings >= criticalLevels && allTotalCallSettings !=0){
+      var text = "Your bill has the critical level & it has been stopped";
+      return  text ;
+    }
+    if(allTotalCallSettings >= warningLevels && allTotalCallSettings !=0){
+      var text = "Your bill has reached a warning level!";
+      return text;
+    }
+  }
+
   function reload(){
     smsCost = 0;
     callCost = 0;
@@ -160,6 +167,7 @@ module.exports = function() {
     actions,
     actionsFor,
     total,
-    reload
+    reload,
+    errorDisplay
   }
 }

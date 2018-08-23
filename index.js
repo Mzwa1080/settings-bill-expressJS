@@ -37,20 +37,18 @@ app.get('/', function(req,res){
 				total:billSettings.forTotal(),
 				alert:billSettings.colorChanger(),
 				warningLevel:billSettings.forWarningValue(),
-				criticalLevel:billSettings.forCriticalValue(),
-				// sms:billSettings.reload(),
-				// call:billSettings.reload(),
-				// total:billSettings.reload()
+				criticalLevel:billSettings.forCriticalValue()
 			    };
+// -----TURNS THE COLOR & ADDS THE TEXT -----
+			var error = {
+				alert:billSettings.colorChanger(),
+				error:billSettings.errorDisplay()
+			};
 
-				// var clear = {
-				// 	sms:billSettings.reload(),
-				// 	call:billSettings.reload(),
-				// 	total:billSettings.reload()
-				// }
 	res.render('home', {
 				valueSum: goGet,
-				totals
+				totals,
+				error
 		});
 });
 
@@ -90,21 +88,19 @@ app.get('/actions/:type', function(req, res){
 
 });
 
-
 app.get('/reload', function(req, res){
-				billSettings.reload()
-	// var totals = {
-	// 	sms:billSettings.forSmsValues(),
-	// 	call:billSettings.forCallValues(),
-	// 	total:billSettings.forTotal(),
-	// 	alert:billSettings.colorChanger()
-	// }
-	res.redirect('/');
+		billSettings.reload()
+		res.redirect('/');
+})
+
+app.get('/errorText', function(req, res){
+		billSettings.errorDisplay();
+		res.redirect('/');
 })
 
 let PORT = process.env.PORT || 3018;
 
 app.listen(PORT, function(){
-  console.log('App starting on port', PORT);
+  	console.log('App starting on port', PORT);
 });
 //app.listen(3018);
