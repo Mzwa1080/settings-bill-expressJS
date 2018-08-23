@@ -45,7 +45,7 @@ module.exports = function() {
         });
       }
     }
-    
+
     if (billPrice === "sms") {
       if (allTotalCallSettings < criticalLevels) {
         smsTotalThree += smsCost;
@@ -127,6 +127,9 @@ module.exports = function() {
 
     else if (allTotalCallSettings >= warningLevels && allTotalCallSettings !==0) {
       return "warning";
+    }
+    else {
+      return "not yet";
     }
   }
 
