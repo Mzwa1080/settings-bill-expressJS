@@ -119,6 +119,7 @@ module.exports = function() {
   function forWarningValue() {
     return warningLevels.toFixed(2);
   }
+  
   function forCriticalValue() {
     return criticalLevels.toFixed(2);
   }
@@ -127,10 +128,12 @@ module.exports = function() {
     allTotalCallSettings = callsTotalThree + smsTotalThree;
     return allTotalCallSettings.toFixed(2);
   }
+
   function total(){
     forTesting = callCost + smsCost;
     return forTesting;
   }
+
   function colorChanger() {
     if (allTotalCallSettings >= criticalLevels && allTotalCallSettings !==0) {
       return "danger";
