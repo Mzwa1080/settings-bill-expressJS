@@ -30,6 +30,7 @@ app.engine('handlebars', expressHandlebars({defaultLayout: 'main',
 }));
 
 
+
 app.set('view engine', 'handlebars');
 
 app.get('/', function(req,res){
@@ -38,7 +39,7 @@ app.get('/', function(req,res){
 			var goGet = {
 				call:billSettings.getCallCost(),
 				sms:billSettings.getSmsCost(),
-			
+
 				warningLevel:billSettings.forWarningValue(),
 	      criticalLevel:billSettings.forCriticalValue()
 			};
