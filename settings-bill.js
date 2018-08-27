@@ -12,11 +12,10 @@ module.exports = function() {
 
   let actionList = [];
   let forTesting = 0;
-  
+
   function callCostValue(updateCallValue) {
     callCost = parseFloat(updateCallValue)
      return callCost.toFixed(2);
-
   }
 
   function smsCostValue(updateSmsValue) {
