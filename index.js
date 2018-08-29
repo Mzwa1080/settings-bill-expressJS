@@ -18,10 +18,8 @@ app.use(express.static('public'));
 
 
 app.engine('handlebars', expressHandlebars({defaultLayout: 'main',
-
   helpers : {
 		"recentDate": function(){
-
 			return Moment(this.timestamp).fromNow()
 		}
 	}

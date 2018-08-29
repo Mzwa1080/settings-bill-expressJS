@@ -103,7 +103,6 @@ module.exports = function() {
   function getCallCost() {
     return callCost.toFixed(2);
   }
-
 //--------------------------------------------------------- --------------------
 //FOR WHEN THE USER ENTERED A NUMBER AND NOW RADIO BTN IS COUNTING, THATS Y THEY ARE RETURNING ZERO
   function forCallValues() {
@@ -119,7 +118,7 @@ module.exports = function() {
   function forWarningValue() {
     return warningLevels.toFixed(2);
   }
-  
+
   function forCriticalValue() {
     return criticalLevels.toFixed(2);
   }
